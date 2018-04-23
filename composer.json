@@ -1,0 +1,18 @@
+{
+    "name": "sitegeist/trafficlights",
+    "description": "Visualize concurrent-changes from other editors in the node-tree",
+    "type": "neos-package",
+    "require": {
+        "neos/flow": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sitegeist\\TrafficLights\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Sitegeist.TrafficLights"
+        }
+    }
+}
