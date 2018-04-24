@@ -3,7 +3,7 @@
     "description": "Visualize concurrent-changes from other editors in the node-tree",
     "type": "neos-package",
     "require": {
-        "neos/flow": "*"
+        "neos/neos-ui": "*"
     },
     "autoload": {
         "psr-4": {
