@@ -1,0 +1,137 @@
+.header {
+    composes: reset from './../reset.css';
+    margin: 0;
+    position: relative;
+    line-height: 20px;
+}
+.header__chevron {
+    composes: reset from './../reset.css';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 18px;
+
+    color: var(--colors-ContrastBrighter);
+    line-height: 20px;
+    text-align: center;
+
+    cursor: pointer;
+
+    &:hover {
+        color: var(--colors-PrimaryBlue);
+    }
+}
+.header__chevron--isCollapsed > svg {
+    transform: translateY(3px) translateX(-2px) rotate(-90deg);
+}
+.header__chevron--isHiddenInIndex,
+.header__data--isHidden {
+    opacity: .5;
+}
+
+.header__chevron--isLoading,
+.header__chevron--isLoading:hover {
+    color: var(--colors-ContrastBrighter) !important;
+}
+
+.header__chevron--isLoading > svg {
+    margin-top: 6px;
+}
+
+.header__icon {
+    margin: 0 .4em;
+}
+
+.header__data {
+    composes: reset from './../reset.css';
+    position: relative;
+    display: inline-block;
+    min-width: 100%;
+    padding: .1em 0;
+
+    border-left: 2px solid transparent;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+}
+
+.header__data--isHiddenInIndex {
+    opacity: .5;
+}
+.header__data--isHidden {
+    opacity: .5;
+    text-decoration: line-through;
+}
+.header__data--isDragging {
+    opacity: .2;
+}
+.header__data--isDirty {
+    border-left: 2px solid var(--colors-Warn);
+}
+
+.header__data--nodeHasForeignChanges {
+    border-left: 2px solid #0080ff;
+}
+
+.header__data--isFocused {
+    background: var(--colors-ContrastNeutral);
+
+    &.header__data--isHiddenInIndex,
+    &.header__data--isHidden {
+        opacity: .8;
+    }
+}
+.header__data--acceptsDrop {
+    background-color: var(--colors-PrimaryBlue);
+}
+.header__data--acceptsDrop *,
+.header__data--deniesDrop * {
+    pointer-events: none;
+}
+
+.header__labelWrapper {
+    max-width: 260px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    line-height: 1.5;
+    vertical-align: middle;
+}
+.header__label {
+    composes: reset from './../reset.css';
+
+    .header__data--isActive & {
+        color: var(--colors-PrimaryBlue);
+    }
+}
+
+.contents {
+    composes: reset from './../reset.css';
+}
+
+.dropTarget {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding-left: 15px;
+}
+.dropTarget--before {
+    top: -5px;
+    z-index: var(--zIndex-SideBar-DropTargetBefore);
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.dropTarget--after {
+    bottom: 0;
+    z-index: var(--zIndex-SideBar-DropTargetAfter);
+    padding-top: 6px;
+    padding-bottom: 0;
+}
+.dropTarget__inner {
+    height: 2px;
+}
+.dropTarget__inner--acceptsDrop {
+    background-color: var(--colors-PrimaryBlue);
+}

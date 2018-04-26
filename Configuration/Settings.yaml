@@ -1,0 +1,7 @@
+Neos:
+  Neos:
+    Ui:
+      resources:
+        javascript:
+          'Sitegeist.TrafficLights':
+            resource: resource://Sitegeist.TrafficLights/Public/TrafficLights/Plugin.js
