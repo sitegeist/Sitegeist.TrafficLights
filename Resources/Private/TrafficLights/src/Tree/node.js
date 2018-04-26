@@ -209,7 +209,6 @@ export class Header extends PureComponent {
                             title={nodeHasForeignChanges && Array.isArray(foreignWorkspacesWithChanges) ? printForeignWorkspacesWithChanges() : ''}
                             >
                             <div className={theme.header__labelWrapper}>
-                                <IconComponent icon={icon || 'question'} label={iconLabel} className={theme.header__icon}/>
                                 <span {...rest} id={labelIdentifier} className={theme.header__label} onClick={onLabelClick} data-neos-integrational-test="tree__item__nodeHeader__itemLabel">
                                     {label}
                                 </span>
@@ -225,10 +224,16 @@ export class Header extends PureComponent {
                             mode="after"
                             />
                     )}
-                    {hasChildren || isLoading ? this.renderCollapseControl() : null}
                 </div>
             </div>
         );
+
+		//
+		// THESE BOTH LINES CAUSES TROUBLE, REST WORKS
+		//
+        // <IconComponent icon={icon || 'question'} label={iconLabel} className={theme.header__icon}/>
+        // {hasChildren || isLoading ? this.renderCollapseControl() : null}
+		//
         // return connectDragSource(
         //     <div>
         //         <div className={theme.header}>

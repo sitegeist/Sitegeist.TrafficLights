@@ -4814,7 +4814,6 @@ var Header = exports.Header = (_dec2 = (0, _reactDnd.DragSource)(function (_ref4
                         _react2.default.createElement(
                             'div',
                             { className: theme.header__labelWrapper },
-                            _react2.default.createElement(IconComponent, { icon: icon || 'question', label: iconLabel, className: theme.header__icon }),
                             _react2.default.createElement(
                                 'span',
                                 _extends({}, rest, { id: labelIdentifier, className: theme.header__label, onClick: onLabelClick, 'data-neos-integrational-test': 'tree__item__nodeHeader__itemLabel' }),
@@ -4828,10 +4827,16 @@ var Header = exports.Header = (_dec2 = (0, _reactDnd.DragSource)(function (_ref4
                         dragAndDropContext: dragAndDropContext,
                         nodeDndType: nodeDndType,
                         mode: 'after'
-                    }),
-                    hasChildren || isLoading ? this.renderCollapseControl() : null
+                    })
                 )
             ));
+
+            //
+            // THESE BOTH LINES CAUSES TROUBLE, REST WORKS
+            //
+            // <IconComponent icon={icon || 'question'} label={iconLabel} className={theme.header__icon}/>
+            // {hasChildren || isLoading ? this.renderCollapseControl() : null}
+            //
             // return connectDragSource(
             //     <div>
             //         <div className={theme.header}>
