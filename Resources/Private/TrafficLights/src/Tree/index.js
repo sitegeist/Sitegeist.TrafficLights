@@ -17,7 +17,7 @@ const ThemedTreeNodeContents = themr(identifiers.treeNodeContents, nodeStyle)(Co
 // Dependency injection
 //
 import injectProps from './../injectProps.js';
-import Icon from '@neos-project/react-ui-components';
+import {Icon} from '@neos-project/react-ui-components';
 
 const FinalTreeComponent = injectProps({
     NodeComponent: ThemedTreeNode

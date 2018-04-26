@@ -1858,8 +1858,6 @@ var _injectProps2 = _interopRequireDefault(_injectProps);
 
 var _reactUiComponents = __webpack_require__(176);
 
-var _reactUiComponents2 = _interopRequireDefault(_reactUiComponents);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ThemedTree = (0, _reactCssThemr.themr)(_identifiers2.default.tree, _tree2.default)(_tree4.default);
@@ -1877,7 +1875,7 @@ var FinalTreeComponent = (0, _injectProps2.default)({
 })(ThemedTree);
 FinalTreeComponent.Node = ThemedTreeNode;
 FinalTreeComponent.Node.Header = (0, _injectProps2.default)({
-    IconComponent: _reactUiComponents2.default
+    IconComponent: _reactUiComponents.Icon
 })(ThemedTreeNodeHeader);
 FinalTreeComponent.Node.Contents = ThemedTreeNodeContents;
 
@@ -4814,6 +4812,7 @@ var Header = exports.Header = (_dec2 = (0, _reactDnd.DragSource)(function (_ref4
                         _react2.default.createElement(
                             'div',
                             { className: theme.header__labelWrapper },
+                            _react2.default.createElement(IconComponent, { icon: icon || 'question', label: iconLabel, className: theme.header__icon }),
                             _react2.default.createElement(
                                 'span',
                                 _extends({}, rest, { id: labelIdentifier, className: theme.header__label, onClick: onLabelClick, 'data-neos-integrational-test': 'tree__item__nodeHeader__itemLabel' }),
@@ -4827,55 +4826,10 @@ var Header = exports.Header = (_dec2 = (0, _reactDnd.DragSource)(function (_ref4
                         dragAndDropContext: dragAndDropContext,
                         nodeDndType: nodeDndType,
                         mode: 'after'
-                    })
+                    }),
+                    hasChildren || isLoading ? this.renderCollapseControl() : null
                 )
             ));
-
-            //
-            // THESE BOTH LINES CAUSES TROUBLE, REST WORKS
-            //
-            // <IconComponent icon={icon || 'question'} label={iconLabel} className={theme.header__icon}/>
-            // {hasChildren || isLoading ? this.renderCollapseControl() : null}
-            //
-            // return connectDragSource(
-            //     <div>
-            //         <div className={theme.header}>
-            //             <NodeDropTarget
-            //                 id={id}
-            //                 theme={theme}
-            //                 dragAndDropContext={dragAndDropContext}
-            //                 nodeDndType={nodeDndType}
-            //                 mode="before"
-            //                 />
-            //             {connectDropTarget(
-            //                 <div
-            //                     role="button"
-            //                     className={dataClassNames}
-            //                     onClick={onClick}
-            //                     style={{paddingLeft: (level * 18) + 'px'}}
-            //                     title={nodeHasForeignChanges && Array.isArray(foreignWorkspacesWithChanges) ? printForeignWorkspacesWithChanges() : ''}
-            //                     >
-            //                     <div className={theme.header__labelWrapper}>
-            //                         <IconComponent icon={icon || 'question'} label={iconLabel} className={theme.header__icon}/>
-            //                         <span {...rest} id={labelIdentifier} className={theme.header__label} onClick={onLabelClick} data-neos-integrational-test="tree__item__nodeHeader__itemLabel">
-            //                             {label}
-            //                         </span>
-            //                     </div>
-            //                 </div>
-            //             )}
-            //             {isLastChild && (
-            //                 <NodeDropTarget
-            //                     id={id}
-            //                     theme={theme}
-            //                     dragAndDropContext={dragAndDropContext}
-            //                     nodeDndType={nodeDndType}
-            //                     mode="after"
-            //                     />
-            //             )}
-            //             {hasChildren || isLoading ? this.renderCollapseControl() : null}
-            //         </div>
-            //     </div>
-            // );
         }
     }, {
         key: 'renderCollapseControl',
