@@ -178,17 +178,41 @@ export class Header extends PureComponent {
             [theme['header__data--isHiddenInIndex']]: isHiddenInIndex,
             [theme['header__data--isHidden']]: isHidden,
             [theme['header__data--isDirty']]: isDirty,
-            [theme['header__data--nodeHasForeignChanges']]: nodeHasForeignChanges,
-            [theme['header__data--isDragging']]: isDragging,
             [theme['header__data--acceptsDrop']]: isOver && canDrop,
             [theme['header__data--deniesDrop']]: isOver && !canDrop
         });
 
+		const uniqueForeignWorkspacesWithChanges = foreignWorkspacesWithChanges.reduce((workspaces, workspace) => {
+			if (workspaces.includes(workspace[0])) {
+				return workspaces;
+			}
+
+			return workspaces.concat(workspace[0]);
+		}, []);
+
         const printForeignWorkspacesWithChanges = () => {
-            return foreignWorkspacesWithChanges.reduce((workspaces, workspace) => {
+            return uniqueForeignWorkspacesWithChanges.reduce((workspaces, workspace) => {
                 return workspaces.concat(workspace, ', ');
             }, '').slice(0, -2);
         };
+
+		const foreignWorkspacesWithChangesMessage = () => {
+			if (nodeHasForeignChanges) {
+				return `There are unpublished changes in workspace(s): ${printForeignWorkspacesWithChanges()}`;
+			}
+
+			return  '';
+		};
+
+		const changesIcon = () => {
+			if (uniqueForeignWorkspacesWithChanges.length === 1) {
+				return <IconComponent icon={'user'} label={iconLabel} className={theme.header__icon}/>;
+			} else if (uniqueForeignWorkspacesWithChanges.length > 1) {
+				return <IconComponent icon={'users'} label={iconLabel} className={theme.header__icon}/>;
+			}
+
+			return null;
+		};
 
         return connectDragSource(
             <div>
@@ -206,9 +230,10 @@ export class Header extends PureComponent {
                             className={dataClassNames}
                             onClick={onClick}
                             style={{paddingLeft: (level * 18) + 'px'}}
-                            title={nodeHasForeignChanges && Array.isArray(foreignWorkspacesWithChanges) ? printForeignWorkspacesWithChanges() : ''}
+                            title={foreignWorkspacesWithChangesMessage()}
                             >
                             <div className={theme.header__labelWrapper}>
+								{changesIcon()}
                                 <IconComponent icon={icon || 'question'} label={iconLabel} className={theme.header__icon}/>
                                 <span {...rest} id={labelIdentifier} className={theme.header__label} onClick={onLabelClick} data-neos-integrational-test="tree__item__nodeHeader__itemLabel">
                                     {label}

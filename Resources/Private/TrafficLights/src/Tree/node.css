@@ -71,10 +71,6 @@
     border-left: 2px solid var(--colors-Warn);
 }
 
-.header__data--nodeHasForeignChanges {
-    border-left: 2px solid #0080ff;
-}
-
 .header__data--isFocused {
     background: var(--colors-ContrastNeutral);
 
