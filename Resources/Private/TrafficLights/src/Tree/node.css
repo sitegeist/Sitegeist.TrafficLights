@@ -40,7 +40,7 @@
 }
 
 .header__icon {
-    margin: 0 .4em;
+    margin: 0 .4em !important;
 }
 
 .header__data {
