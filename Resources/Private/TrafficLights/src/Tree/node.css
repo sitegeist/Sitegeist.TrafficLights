@@ -43,6 +43,10 @@
     margin: 0 .4em !important;
 }
 
+.header__icon__modified {
+	color: var(--colors-Warn) !important;
+}
+
 .header__data {
     composes: reset from './../reset.css';
     position: relative;

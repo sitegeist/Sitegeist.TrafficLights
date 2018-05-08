@@ -205,10 +205,15 @@ export class Header extends PureComponent {
 		};
 
 		const changesIcon = () => {
+			const classNames = mergeClassNames({
+				[theme.header__icon]: true,
+				[theme.header__icon__modified]: true
+			});
+
 			if (uniqueForeignWorkspacesWithChanges.length === 1) {
-				return <IconComponent icon={'user'} label={iconLabel} className={theme.header__icon}/>;
+				return <IconComponent icon={'user'} label={iconLabel} className={classNames}/>;
 			} else if (uniqueForeignWorkspacesWithChanges.length > 1) {
-				return <IconComponent icon={'users'} label={iconLabel} className={theme.header__icon}/>;
+				return <IconComponent icon={'users'} label={iconLabel} className={classNames}/>;
 			}
 
 			return null;
@@ -233,8 +238,8 @@ export class Header extends PureComponent {
                             title={foreignWorkspacesWithChangesMessage()}
                             >
                             <div className={theme.header__labelWrapper}>
-								{changesIcon()}
                                 <IconComponent icon={icon || 'question'} label={iconLabel} className={theme.header__icon}/>
+								{changesIcon()}
                                 <span {...rest} id={labelIdentifier} className={theme.header__label} onClick={onLabelClick} data-neos-integrational-test="tree__item__nodeHeader__itemLabel">
                                     {label}
                                 </span>
