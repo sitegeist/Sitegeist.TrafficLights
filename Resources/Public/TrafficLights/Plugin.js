@@ -4781,16 +4781,18 @@ var Header = exports.Header = (_dec2 = (0, _reactDnd.DragSource)(function (_ref4
             var rest = (0, _lodash2.default)(restProps, ['onToggle', 'isCollapsed', 'hasError', 'isDragging', 'dragForbidden']);
             var dataClassNames = (0, _classnames2.default)((_mergeClassNames3 = {}, _defineProperty(_mergeClassNames3, theme.header__data, true), _defineProperty(_mergeClassNames3, theme['header__data--isActive'], isActive), _defineProperty(_mergeClassNames3, theme['header__data--isFocused'], isFocused), _defineProperty(_mergeClassNames3, theme['header__data--isLastChild'], isLastChild), _defineProperty(_mergeClassNames3, theme['header__data--isHiddenInIndex'], isHiddenInIndex), _defineProperty(_mergeClassNames3, theme['header__data--isHidden'], isHidden), _defineProperty(_mergeClassNames3, theme['header__data--isDirty'], isDirty), _defineProperty(_mergeClassNames3, theme['header__data--acceptsDrop'], isOver && canDrop), _defineProperty(_mergeClassNames3, theme['header__data--deniesDrop'], isOver && !canDrop), _mergeClassNames3));
 
-            var uniqueForeignWorkspacesWithChanges = foreignWorkspacesWithChanges.reduce(function (workspaces, workspace) {
-                if (workspaces.includes(workspace[0])) {
-                    return workspaces;
-                }
+            var uniqueForeignWorkspacesWithChanges = function uniqueForeignWorkspacesWithChanges() {
+                return 0 in foreignWorkspacesWithChanges && foreignWorkspacesWithChanges[0].reduce(function (workspaces, workspace) {
+                    if (workspaces.includes(workspace)) {
+                        return workspaces;
+                    }
 
-                return workspaces.concat(workspace[0]);
-            }, []);
+                    return workspaces.concat(workspace);
+                }, []);
+            };
 
             var printForeignWorkspacesWithChanges = function printForeignWorkspacesWithChanges() {
-                return uniqueForeignWorkspacesWithChanges.reduce(function (workspaces, workspace) {
+                return uniqueForeignWorkspacesWithChanges().reduce(function (workspaces, workspace) {
                     return workspaces.concat(workspace, ', ');
                 }, '').slice(0, -2);
             };
@@ -4808,9 +4810,9 @@ var Header = exports.Header = (_dec2 = (0, _reactDnd.DragSource)(function (_ref4
 
                 var classNames = (0, _classnames2.default)((_mergeClassNames4 = {}, _defineProperty(_mergeClassNames4, theme.header__icon, true), _defineProperty(_mergeClassNames4, theme.header__icon__modified, true), _mergeClassNames4));
 
-                if (uniqueForeignWorkspacesWithChanges.length === 1) {
+                if (uniqueForeignWorkspacesWithChanges().length === 1) {
                     return _react2.default.createElement(IconComponent, { icon: 'user', label: iconLabel, className: classNames });
-                } else if (uniqueForeignWorkspacesWithChanges.length > 1) {
+                } else if (uniqueForeignWorkspacesWithChanges().length > 1) {
                     return _react2.default.createElement(IconComponent, { icon: 'users', label: iconLabel, className: classNames });
                 }
 
@@ -11838,6 +11840,10 @@ var Node = (_temp2 = _class = function (_PureComponent) {
                 nodeHasForeignChanges = _props9.nodeHasForeignChanges,
                 foreignWorkspacesWithChanges = _props9.foreignWorkspacesWithChanges;
 
+
+            if (nodeHasForeignChanges) {
+                console.log(foreignWorkspacesWithChanges);
+            }
 
             if (this.isHidden()) {
                 return null;

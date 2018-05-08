@@ -182,16 +182,16 @@ export class Header extends PureComponent {
             [theme['header__data--deniesDrop']]: isOver && !canDrop
         });
 
-		const uniqueForeignWorkspacesWithChanges = foreignWorkspacesWithChanges.reduce((workspaces, workspace) => {
-			if (workspaces.includes(workspace[0])) {
+		const uniqueForeignWorkspacesWithChanges = () => 0 in foreignWorkspacesWithChanges && foreignWorkspacesWithChanges[0].reduce((workspaces, workspace) => {
+			if (workspaces.includes(workspace)) {
 				return workspaces;
 			}
 
-			return workspaces.concat(workspace[0]);
+			return workspaces.concat(workspace);
 		}, []);
 
         const printForeignWorkspacesWithChanges = () => {
-            return uniqueForeignWorkspacesWithChanges.reduce((workspaces, workspace) => {
+            return uniqueForeignWorkspacesWithChanges().reduce((workspaces, workspace) => {
                 return workspaces.concat(workspace, ', ');
             }, '').slice(0, -2);
         };
@@ -210,9 +210,9 @@ export class Header extends PureComponent {
 				[theme.header__icon__modified]: true
 			});
 
-			if (uniqueForeignWorkspacesWithChanges.length === 1) {
+			if (uniqueForeignWorkspacesWithChanges().length === 1) {
 				return <IconComponent icon={'user'} label={iconLabel} className={classNames}/>;
-			} else if (uniqueForeignWorkspacesWithChanges.length > 1) {
+			} else if (uniqueForeignWorkspacesWithChanges().length > 1) {
 				return <IconComponent icon={'users'} label={iconLabel} className={classNames}/>;
 			}
 
