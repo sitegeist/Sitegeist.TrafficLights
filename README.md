@@ -5,6 +5,9 @@
 
 ![example](./Example/example.png "example")
 
+Adds a small orange icon to indicate that a different user has unpublished 
+changes and shows in which workspace(s) on hover
+
 
 ## Status
 

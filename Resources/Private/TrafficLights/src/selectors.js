@@ -18,18 +18,21 @@ export const makeForeignWorkspacesWithChangesSelector = () => createSelector(
             return contextPath;
         }
     ],
+
     (nodes, contextPath) => {
         if (nodes) {
-            return nodes.reduce((workspaces, node) => {
-                if (nodes.filter(i => $get('hasForeignChanges', i) && $get('contextPath', i) === contextPath).count() > 0) {
-                    if ($get('hasForeignChanges', node)) {
-                        workspaces.push($get('foreignWorkspacesWithChanges', node)._tail.array);
-                    }
-                }
+			const nodeHasForeignChanges = (nodes.filter(i => $get('hasForeignChanges', i) && $get('contextPath', i) === contextPath).count() > 0);
 
-                return workspaces;
-            }, []);
-        }
+			return nodes.reduce((workspaces, node) => {
+				if (nodeHasForeignChanges) {
+					if ($get('contextPath', node) === contextPath) {
+						return [...workspaces, ...$get('foreignWorkspacesWithChanges', node)._tail.array]
+					}
+				}
+
+				return workspaces;
+			}, []);
+		}
 
         return [];
     }

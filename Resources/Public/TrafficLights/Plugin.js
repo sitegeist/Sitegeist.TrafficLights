@@ -4781,18 +4781,8 @@ var Header = exports.Header = (_dec2 = (0, _reactDnd.DragSource)(function (_ref4
             var rest = (0, _lodash2.default)(restProps, ['onToggle', 'isCollapsed', 'hasError', 'isDragging', 'dragForbidden']);
             var dataClassNames = (0, _classnames2.default)((_mergeClassNames3 = {}, _defineProperty(_mergeClassNames3, theme.header__data, true), _defineProperty(_mergeClassNames3, theme['header__data--isActive'], isActive), _defineProperty(_mergeClassNames3, theme['header__data--isFocused'], isFocused), _defineProperty(_mergeClassNames3, theme['header__data--isLastChild'], isLastChild), _defineProperty(_mergeClassNames3, theme['header__data--isHiddenInIndex'], isHiddenInIndex), _defineProperty(_mergeClassNames3, theme['header__data--isHidden'], isHidden), _defineProperty(_mergeClassNames3, theme['header__data--isDirty'], isDirty), _defineProperty(_mergeClassNames3, theme['header__data--acceptsDrop'], isOver && canDrop), _defineProperty(_mergeClassNames3, theme['header__data--deniesDrop'], isOver && !canDrop), _mergeClassNames3));
 
-            var uniqueForeignWorkspacesWithChanges = function uniqueForeignWorkspacesWithChanges() {
-                return 0 in foreignWorkspacesWithChanges && foreignWorkspacesWithChanges[0].reduce(function (workspaces, workspace) {
-                    if (workspaces.includes(workspace)) {
-                        return workspaces;
-                    }
-
-                    return workspaces.concat(workspace);
-                }, []);
-            };
-
             var printForeignWorkspacesWithChanges = function printForeignWorkspacesWithChanges() {
-                return uniqueForeignWorkspacesWithChanges().reduce(function (workspaces, workspace) {
+                return foreignWorkspacesWithChanges.reduce(function (workspaces, workspace) {
                     return workspaces.concat(workspace, ', ');
                 }, '').slice(0, -2);
             };
@@ -4810,9 +4800,9 @@ var Header = exports.Header = (_dec2 = (0, _reactDnd.DragSource)(function (_ref4
 
                 var classNames = (0, _classnames2.default)((_mergeClassNames4 = {}, _defineProperty(_mergeClassNames4, theme.header__icon, true), _defineProperty(_mergeClassNames4, theme.header__icon__modified, true), _mergeClassNames4));
 
-                if (uniqueForeignWorkspacesWithChanges().length === 1) {
+                if (foreignWorkspacesWithChanges.length === 1) {
                     return _react2.default.createElement(IconComponent, { icon: 'user', label: iconLabel, className: classNames });
-                } else if (uniqueForeignWorkspacesWithChanges().length > 1) {
+                } else if (foreignWorkspacesWithChanges.length > 1) {
                     return _react2.default.createElement(IconComponent, { icon: 'users', label: iconLabel, className: classNames });
                 }
 
@@ -11842,7 +11832,7 @@ var Node = (_temp2 = _class = function (_PureComponent) {
 
 
             if (nodeHasForeignChanges) {
-                console.log(foreignWorkspacesWithChanges);
+                console.log('FINAL', foreignWorkspacesWithChanges);
             }
 
             if (this.isHidden()) {
@@ -12505,6 +12495,8 @@ var _reselect = __webpack_require__(180);
 
 var _plowJs = __webpack_require__(19);
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 var makeNodeHasForeignChangesSelector = exports.makeNodeHasForeignChangesSelector = function makeNodeHasForeignChangesSelector() {
     return (0, _reselect.createSelector)([(0, _plowJs.$get)('cr.nodes.byContextPath'), function (state, contextPath) {
         return contextPath;
@@ -12520,12 +12512,14 @@ var makeForeignWorkspacesWithChangesSelector = exports.makeForeignWorkspacesWith
         return contextPath;
     }], function (nodes, contextPath) {
         if (nodes) {
+            var nodeHasForeignChanges = nodes.filter(function (i) {
+                return (0, _plowJs.$get)('hasForeignChanges', i) && (0, _plowJs.$get)('contextPath', i) === contextPath;
+            }).count() > 0;
+
             return nodes.reduce(function (workspaces, node) {
-                if (nodes.filter(function (i) {
-                    return (0, _plowJs.$get)('hasForeignChanges', i) && (0, _plowJs.$get)('contextPath', i) === contextPath;
-                }).count() > 0) {
-                    if ((0, _plowJs.$get)('hasForeignChanges', node)) {
-                        workspaces.push((0, _plowJs.$get)('foreignWorkspacesWithChanges', node)._tail.array);
+                if (nodeHasForeignChanges) {
+                    if ((0, _plowJs.$get)('contextPath', node) === contextPath) {
+                        return [].concat(_toConsumableArray(workspaces), _toConsumableArray((0, _plowJs.$get)('foreignWorkspacesWithChanges', node)._tail.array));
                     }
                 }
 
