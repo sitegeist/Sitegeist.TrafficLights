@@ -75,7 +75,12 @@ class UnpublishedChangesCommandController extends CommandController
                     $context = $this->contextFactory->create(['workspaceName' => $pathParts['workspaceName'], 'dimensions ' => $pathParts['dimensions']]);
                     $documentNode = $context->getNode($pathParts['nodePath']);
 
-                    $title = $documentNode->getProperty('title');
+                    if ($documentNode !== null) {
+                        $title = $documentNode->getProperty('title');
+                    } else {
+                        $title = '';
+                    }
+
                     $this->outputLine(' - %s changes on document "%s"', [$changeNumber, $title]);
                 }
             } else {

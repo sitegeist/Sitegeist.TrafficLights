@@ -3430,7 +3430,7 @@ exports = module.exports = __webpack_require__(9)(false);
 exports.i(__webpack_require__(4), undefined);
 
 // module
-exports.push([module.i, ".node__header___IYjFN {\n    margin: 0;\n    position: relative;\n    line-height: 20px;\n}\n.node__header__chevron___16rco {\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 100%;\n    width: 18px;\n\n    color: #adadad;\n    line-height: 20px;\n    text-align: center;\n\n    cursor: pointer;\n}\n.node__header__chevron___16rco:hover {\n        color: #00ADEE;\n    }\n.node__header__chevron--isCollapsed___1lDfA > svg {\n    transform: translateY(3px) translateX(-2px) rotate(-90deg);\n}\n.node__header__chevron--isHiddenInIndex___3HVe5,\n.node__header__data--isHidden___2G2ph {\n    opacity: .5;\n}\n.node__header__chevron--isLoading___3gcVb {\n    color: #adadad !important;\n}\n.node__header__chevron--isLoading___3gcVb:hover {\n    color: #adadad !important;\n}\n.node__header__chevron--isLoading___3gcVb > svg {\n    margin-top: 6px;\n}\n.node__header__icon___2-blb {\n    margin: 0 .4em !important;\n}\n.node__header__data___Evwzu {\n    position: relative;\n    display: inline-block;\n    min-width: 100%;\n    padding: .1em 0;\n\n    border-left: 2px solid transparent;\n\n    white-space: nowrap;\n\n    cursor: pointer;\n}\n.node__header__data--isHiddenInIndex___2SDHk {\n    opacity: .5;\n}\n.node__header__data--isHidden___2G2ph {\n    opacity: .5;\n    text-decoration: line-through;\n}\n.node__header__data--isDragging___GmvzY {\n    opacity: .2;\n}\n.node__header__data--isDirty___3pwwI {\n    border-left: 2px solid #ff8700;\n}\n.node__header__data--nodeHasForeignChanges___2e2CH {\n    border-left: 2px solid #0080ff;\n}\n.node__header__data--isFocused___3zHPu {\n    background: #323232;\n}\n.node__header__data--isFocused___3zHPu.node__header__data--isHiddenInIndex___2SDHk,\n    .node__header__data--isFocused___3zHPu.node__header__data--isHidden___2G2ph {\n        opacity: .8;\n    }\n.node__header__data--acceptsDrop___2yqLu {\n    background-color: #00ADEE;\n}\n.node__header__data--acceptsDrop___2yqLu *,\n.node__header__data--deniesDrop___2C_Jy * {\n    pointer-events: none;\n}\n.node__header__labelWrapper___v6nSo {\n    max-width: 260px;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    display: inline-block;\n    line-height: 1.5;\n    vertical-align: middle;\n}\n.node__header__label___P0o2B {\n}\n.node__header__data--isActive___3_Ui0 .node__header__label___P0o2B {\n        color: #00ADEE;\n    }\n.node__contents___3c2q8 {\n}\n.node__dropTarget___13wiP {\n    position: absolute;\n    left: 0;\n    right: 0;\n    padding-left: 15px;\n}\n.node__dropTarget--before___1GlQu {\n    top: -5px;\n    z-index: 1;\n    padding-top: 4px;\n    padding-bottom: 4px;\n}\n.node__dropTarget--after___gC7Oc {\n    bottom: 0;\n    z-index: 2;\n    padding-top: 6px;\n    padding-bottom: 0;\n}\n.node__dropTarget__inner___aiss_ {\n    height: 2px;\n}\n.node__dropTarget__inner--acceptsDrop___13kjs {\n    background-color: #00ADEE;\n}\n", ""]);
+exports.push([module.i, ".node__header___IYjFN {\n    margin: 0;\n    position: relative;\n    line-height: 20px;\n}\n.node__header__chevron___16rco {\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 100%;\n    width: 18px;\n\n    color: #adadad;\n    line-height: 20px;\n    text-align: center;\n\n    cursor: pointer;\n}\n.node__header__chevron___16rco:hover {\n        color: #00ADEE;\n    }\n.node__header__chevron--isCollapsed___1lDfA > svg {\n    transform: translateY(3px) translateX(-2px) rotate(-90deg);\n}\n.node__header__chevron--isHiddenInIndex___3HVe5,\n.node__header__data--isHidden___2G2ph {\n    opacity: .5;\n}\n.node__header__chevron--isLoading___3gcVb {\n    color: #adadad !important;\n}\n.node__header__chevron--isLoading___3gcVb:hover {\n    color: #adadad !important;\n}\n.node__header__chevron--isLoading___3gcVb > svg {\n    margin-top: 6px;\n}\n.node__header__icon___2-blb {\n    margin: 0 .4em !important;\n}\n.node__header__icon__modified___2G7_G {\n\tcolor: #ff8700 !important;\n}\n.node__header__data___Evwzu {\n    position: relative;\n    display: inline-block;\n    min-width: 100%;\n    padding: .1em 0;\n\n    border-left: 2px solid transparent;\n\n    white-space: nowrap;\n\n    cursor: pointer;\n}\n.node__header__data--isHiddenInIndex___2SDHk {\n    opacity: .5;\n}\n.node__header__data--isHidden___2G2ph {\n    opacity: .5;\n    text-decoration: line-through;\n}\n.node__header__data--isDragging___GmvzY {\n    opacity: .2;\n}\n.node__header__data--isDirty___3pwwI {\n    border-left: 2px solid #ff8700;\n}\n.node__header__data--isFocused___3zHPu {\n    background: #323232;\n}\n.node__header__data--isFocused___3zHPu.node__header__data--isHiddenInIndex___2SDHk,\n    .node__header__data--isFocused___3zHPu.node__header__data--isHidden___2G2ph {\n        opacity: .8;\n    }\n.node__header__data--acceptsDrop___2yqLu {\n    background-color: #00ADEE;\n}\n.node__header__data--acceptsDrop___2yqLu *,\n.node__header__data--deniesDrop___2C_Jy * {\n    pointer-events: none;\n}\n.node__header__labelWrapper___v6nSo {\n    max-width: 260px;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    display: inline-block;\n    line-height: 1.5;\n    vertical-align: middle;\n}\n.node__header__label___P0o2B {\n}\n.node__header__data--isActive___3_Ui0 .node__header__label___P0o2B {\n        color: #00ADEE;\n    }\n.node__contents___3c2q8 {\n}\n.node__dropTarget___13wiP {\n    position: absolute;\n    left: 0;\n    right: 0;\n    padding-left: 15px;\n}\n.node__dropTarget--before___1GlQu {\n    top: -5px;\n    z-index: 1;\n    padding-top: 4px;\n    padding-bottom: 4px;\n}\n.node__dropTarget--after___gC7Oc {\n    bottom: 0;\n    z-index: 2;\n    padding-top: 6px;\n    padding-bottom: 0;\n}\n.node__dropTarget__inner___aiss_ {\n    height: 2px;\n}\n.node__dropTarget__inner--acceptsDrop___13kjs {\n    background-color: #00ADEE;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -3441,11 +3441,11 @@ exports.locals = {
 	"header__data--isHidden": "node__header__data--isHidden___2G2ph",
 	"header__chevron--isLoading": "node__header__chevron--isLoading___3gcVb",
 	"header__icon": "node__header__icon___2-blb",
+	"header__icon__modified": "node__header__icon__modified___2G7_G",
 	"header__data": "node__header__data___Evwzu " + __webpack_require__(4).locals["reset"] + "",
 	"header__data--isHiddenInIndex": "node__header__data--isHiddenInIndex___2SDHk",
 	"header__data--isDragging": "node__header__data--isDragging___GmvzY",
 	"header__data--isDirty": "node__header__data--isDirty___3pwwI",
-	"header__data--nodeHasForeignChanges": "node__header__data--nodeHasForeignChanges___2e2CH",
 	"header__data--isFocused": "node__header__data--isFocused___3zHPu",
 	"header__data--acceptsDrop": "node__header__data--acceptsDrop___2yqLu",
 	"header__data--deniesDrop": "node__header__data--deniesDrop___2C_Jy",
@@ -4779,12 +4779,34 @@ var Header = exports.Header = (_dec2 = (0, _reactDnd.DragSource)(function (_ref4
                 restProps = _objectWithoutProperties(_props3, ['id', 'labelIdentifier', 'nodeDndType', 'IconComponent', 'hasChildren', 'isLastChild', 'isActive', 'isFocused', 'isHidden', 'isHiddenInIndex', 'isDirty', 'isLoading', 'label', 'icon', 'iconLabel', 'level', 'onClick', 'onLabelClick', 'theme', 'connectDragSource', 'connectDropTarget', 'dragAndDropContext', 'isOver', 'isDragging', 'nodeHasForeignChanges', 'foreignWorkspacesWithChanges', 'canDrop']);
 
             var rest = (0, _lodash2.default)(restProps, ['onToggle', 'isCollapsed', 'hasError', 'isDragging', 'dragForbidden']);
-            var dataClassNames = (0, _classnames2.default)((_mergeClassNames3 = {}, _defineProperty(_mergeClassNames3, theme.header__data, true), _defineProperty(_mergeClassNames3, theme['header__data--isActive'], isActive), _defineProperty(_mergeClassNames3, theme['header__data--isFocused'], isFocused), _defineProperty(_mergeClassNames3, theme['header__data--isLastChild'], isLastChild), _defineProperty(_mergeClassNames3, theme['header__data--isHiddenInIndex'], isHiddenInIndex), _defineProperty(_mergeClassNames3, theme['header__data--isHidden'], isHidden), _defineProperty(_mergeClassNames3, theme['header__data--isDirty'], isDirty), _defineProperty(_mergeClassNames3, theme['header__data--nodeHasForeignChanges'], nodeHasForeignChanges), _defineProperty(_mergeClassNames3, theme['header__data--isDragging'], isDragging), _defineProperty(_mergeClassNames3, theme['header__data--acceptsDrop'], isOver && canDrop), _defineProperty(_mergeClassNames3, theme['header__data--deniesDrop'], isOver && !canDrop), _mergeClassNames3));
+            var dataClassNames = (0, _classnames2.default)((_mergeClassNames3 = {}, _defineProperty(_mergeClassNames3, theme.header__data, true), _defineProperty(_mergeClassNames3, theme['header__data--isActive'], isActive), _defineProperty(_mergeClassNames3, theme['header__data--isFocused'], isFocused), _defineProperty(_mergeClassNames3, theme['header__data--isLastChild'], isLastChild), _defineProperty(_mergeClassNames3, theme['header__data--isHiddenInIndex'], isHiddenInIndex), _defineProperty(_mergeClassNames3, theme['header__data--isHidden'], isHidden), _defineProperty(_mergeClassNames3, theme['header__data--isDirty'], isDirty), _defineProperty(_mergeClassNames3, theme['header__data--acceptsDrop'], isOver && canDrop), _defineProperty(_mergeClassNames3, theme['header__data--deniesDrop'], isOver && !canDrop), _mergeClassNames3));
 
             var printForeignWorkspacesWithChanges = function printForeignWorkspacesWithChanges() {
                 return foreignWorkspacesWithChanges.reduce(function (workspaces, workspace) {
                     return workspaces.concat(workspace, ', ');
                 }, '').slice(0, -2);
+            };
+
+            var foreignWorkspacesWithChangesMessage = function foreignWorkspacesWithChangesMessage() {
+                if (nodeHasForeignChanges) {
+                    return 'There are unpublished changes in workspace(s): ' + printForeignWorkspacesWithChanges();
+                }
+
+                return '';
+            };
+
+            var changesIcon = function changesIcon() {
+                var _mergeClassNames4;
+
+                var classNames = (0, _classnames2.default)((_mergeClassNames4 = {}, _defineProperty(_mergeClassNames4, theme.header__icon, true), _defineProperty(_mergeClassNames4, theme.header__icon__modified, true), _mergeClassNames4));
+
+                if (foreignWorkspacesWithChanges.length === 1) {
+                    return _react2.default.createElement(IconComponent, { icon: 'user', label: iconLabel, className: classNames });
+                } else if (foreignWorkspacesWithChanges.length > 1) {
+                    return _react2.default.createElement(IconComponent, { icon: 'users', label: iconLabel, className: classNames });
+                }
+
+                return null;
             };
 
             return connectDragSource(_react2.default.createElement(
@@ -4807,12 +4829,13 @@ var Header = exports.Header = (_dec2 = (0, _reactDnd.DragSource)(function (_ref4
                             className: dataClassNames,
                             onClick: onClick,
                             style: { paddingLeft: level * 18 + 'px' },
-                            title: nodeHasForeignChanges && Array.isArray(foreignWorkspacesWithChanges) ? printForeignWorkspacesWithChanges() : ''
+                            title: foreignWorkspacesWithChangesMessage()
                         },
                         _react2.default.createElement(
                             'div',
                             { className: theme.header__labelWrapper },
                             _react2.default.createElement(IconComponent, { icon: icon || 'question', label: iconLabel, className: theme.header__icon }),
+                            changesIcon(),
                             _react2.default.createElement(
                                 'span',
                                 _extends({}, rest, { id: labelIdentifier, className: theme.header__label, onClick: onLabelClick, 'data-neos-integrational-test': 'tree__item__nodeHeader__itemLabel' }),
@@ -4834,7 +4857,7 @@ var Header = exports.Header = (_dec2 = (0, _reactDnd.DragSource)(function (_ref4
     }, {
         key: 'renderCollapseControl',
         value: function renderCollapseControl() {
-            var _mergeClassNames4;
+            var _mergeClassNames5;
 
             var _props4 = this.props,
                 IconComponent = _props4.IconComponent,
@@ -4847,7 +4870,7 @@ var Header = exports.Header = (_dec2 = (0, _reactDnd.DragSource)(function (_ref4
                 theme = _props4.theme,
                 level = _props4.level;
 
-            var classnames = (0, _classnames2.default)((_mergeClassNames4 = {}, _defineProperty(_mergeClassNames4, theme.header__chevron, true), _defineProperty(_mergeClassNames4, theme['header__chevron--isCollapsed'], isCollapsed), _defineProperty(_mergeClassNames4, theme['header__chevron--isLoading'], isLoading), _defineProperty(_mergeClassNames4, theme['header__chevron--isHiddenInIndex'], isHiddenInIndex), _defineProperty(_mergeClassNames4, theme['header__chevron--isHidden'], isHidden), _mergeClassNames4));
+            var classnames = (0, _classnames2.default)((_mergeClassNames5 = {}, _defineProperty(_mergeClassNames5, theme.header__chevron, true), _defineProperty(_mergeClassNames5, theme['header__chevron--isCollapsed'], isCollapsed), _defineProperty(_mergeClassNames5, theme['header__chevron--isLoading'], isLoading), _defineProperty(_mergeClassNames5, theme['header__chevron--isHiddenInIndex'], isHiddenInIndex), _defineProperty(_mergeClassNames5, theme['header__chevron--isHidden'], isHidden), _mergeClassNames5));
             var icon = void 0;
 
             switch (true) {
@@ -12468,6 +12491,8 @@ var _reselect = __webpack_require__(180);
 
 var _plowJs = __webpack_require__(19);
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 var makeNodeHasForeignChangesSelector = exports.makeNodeHasForeignChangesSelector = function makeNodeHasForeignChangesSelector() {
     return (0, _reselect.createSelector)([(0, _plowJs.$get)('cr.nodes.byContextPath'), function (state, contextPath) {
         return contextPath;
@@ -12483,13 +12508,14 @@ var makeForeignWorkspacesWithChangesSelector = exports.makeForeignWorkspacesWith
         return contextPath;
     }], function (nodes, contextPath) {
         if (nodes) {
+            var nodeHasForeignChanges = nodes.filter(function (i) {
+                return (0, _plowJs.$get)('hasForeignChanges', i) && (0, _plowJs.$get)('contextPath', i) === contextPath;
+            }).count() > 0;
+
             return nodes.reduce(function (workspaces, node) {
-                if (nodes.filter(function (i) {
-                    return (0, _plowJs.$get)('hasForeignChanges', i) && (0, _plowJs.$get)('contextPath', i) === contextPath;
-                }).count() > 0) {
-                    if ((0, _plowJs.$get)('hasForeignChanges', node)) {
-                        workspaces.push((0, _plowJs.$get)('foreignWorkspacesWithChanges', node)._tail.array);
-                    }
+                if (nodeHasForeignChanges && (0, _plowJs.$get)('contextPath', node) === contextPath) {
+                    var workspaceNames = (0, _plowJs.$get)('foreignWorkspacesWithChanges', node)._tail.array;
+                    return [].concat(_toConsumableArray(workspaces), _toConsumableArray(workspaceNames));
                 }
 
                 return workspaces;

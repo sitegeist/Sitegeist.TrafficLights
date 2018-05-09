@@ -43,6 +43,10 @@
     margin: 0 .4em !important;
 }
 
+.header__icon__modified {
+	color: var(--colors-Warn) !important;
+}
+
 .header__data {
     composes: reset from './../reset.css';
     position: relative;
@@ -69,10 +73,6 @@
 }
 .header__data--isDirty {
     border-left: 2px solid var(--colors-Warn);
-}
-
-.header__data--nodeHasForeignChanges {
-    border-left: 2px solid #0080ff;
 }
 
 .header__data--isFocused {

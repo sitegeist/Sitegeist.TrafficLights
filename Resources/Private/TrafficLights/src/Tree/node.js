@@ -178,8 +178,6 @@ export class Header extends PureComponent {
             [theme['header__data--isHiddenInIndex']]: isHiddenInIndex,
             [theme['header__data--isHidden']]: isHidden,
             [theme['header__data--isDirty']]: isDirty,
-            [theme['header__data--nodeHasForeignChanges']]: nodeHasForeignChanges,
-            [theme['header__data--isDragging']]: isDragging,
             [theme['header__data--acceptsDrop']]: isOver && canDrop,
             [theme['header__data--deniesDrop']]: isOver && !canDrop
         });
@@ -189,6 +187,29 @@ export class Header extends PureComponent {
                 return workspaces.concat(workspace, ', ');
             }, '').slice(0, -2);
         };
+
+		const foreignWorkspacesWithChangesMessage = () => {
+			if (nodeHasForeignChanges) {
+				return `There are unpublished changes in workspace(s): ${printForeignWorkspacesWithChanges()}`;
+			}
+
+			return  '';
+		};
+
+		const changesIcon = () => {
+			const classNames = mergeClassNames({
+				[theme.header__icon]: true,
+				[theme.header__icon__modified]: true
+			});
+
+			if (foreignWorkspacesWithChanges.length === 1) {
+				return <IconComponent icon={'user'} label={iconLabel} className={classNames}/>;
+			} else if (foreignWorkspacesWithChanges.length > 1) {
+				return <IconComponent icon={'users'} label={iconLabel} className={classNames}/>;
+			}
+
+			return null;
+		};
 
         return connectDragSource(
             <div>
@@ -206,10 +227,11 @@ export class Header extends PureComponent {
                             className={dataClassNames}
                             onClick={onClick}
                             style={{paddingLeft: (level * 18) + 'px'}}
-                            title={nodeHasForeignChanges && Array.isArray(foreignWorkspacesWithChanges) ? printForeignWorkspacesWithChanges() : ''}
+                            title={foreignWorkspacesWithChangesMessage()}
                             >
                             <div className={theme.header__labelWrapper}>
                                 <IconComponent icon={icon || 'question'} label={iconLabel} className={theme.header__icon}/>
+								{changesIcon()}
                                 <span {...rest} id={labelIdentifier} className={theme.header__label} onClick={onLabelClick} data-neos-integrational-test="tree__item__nodeHeader__itemLabel">
                                     {label}
                                 </span>
