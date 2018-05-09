@@ -243,10 +243,6 @@ export default class Node extends PureComponent {
             foreignWorkspacesWithChanges
         } = this.props;
 
-		if (nodeHasForeignChanges) {
-			console.log( 'FINAL', foreignWorkspacesWithChanges );
-		}
-
         if (this.isHidden()) {
             return null;
         }

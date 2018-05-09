@@ -11831,10 +11831,6 @@ var Node = (_temp2 = _class = function (_PureComponent) {
                 foreignWorkspacesWithChanges = _props9.foreignWorkspacesWithChanges;
 
 
-            if (nodeHasForeignChanges) {
-                console.log('FINAL', foreignWorkspacesWithChanges);
-            }
-
             if (this.isHidden()) {
                 return null;
             }
