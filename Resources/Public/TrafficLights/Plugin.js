@@ -12513,10 +12513,9 @@ var makeForeignWorkspacesWithChangesSelector = exports.makeForeignWorkspacesWith
             }).count() > 0;
 
             return nodes.reduce(function (workspaces, node) {
-                if (nodeHasForeignChanges) {
-                    if ((0, _plowJs.$get)('contextPath', node) === contextPath) {
-                        return [].concat(_toConsumableArray(workspaces), _toConsumableArray((0, _plowJs.$get)('foreignWorkspacesWithChanges', node)._tail.array));
-                    }
+                if (nodeHasForeignChanges && (0, _plowJs.$get)('contextPath', node) === contextPath) {
+                    var workspaceNames = (0, _plowJs.$get)('foreignWorkspacesWithChanges', node)._tail.array;
+                    return [].concat(_toConsumableArray(workspaces), _toConsumableArray(workspaceNames));
                 }
 
                 return workspaces;

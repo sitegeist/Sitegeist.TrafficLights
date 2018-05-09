@@ -20,14 +20,13 @@ export const makeForeignWorkspacesWithChangesSelector = () => createSelector(
     ],
 
     (nodes, contextPath) => {
-        if (nodes) {
+		if (nodes) {
 			const nodeHasForeignChanges = (nodes.filter(i => $get('hasForeignChanges', i) && $get('contextPath', i) === contextPath).count() > 0);
 
 			return nodes.reduce((workspaces, node) => {
-				if (nodeHasForeignChanges) {
-					if ($get('contextPath', node) === contextPath) {
-						return [...workspaces, ...$get('foreignWorkspacesWithChanges', node)._tail.array]
-					}
+				if (nodeHasForeignChanges && $get('contextPath', node) === contextPath) {
+					const workspaceNames = $get('foreignWorkspacesWithChanges', node)._tail.array;
+					return [...workspaces, ...workspaceNames]
 				}
 
 				return workspaces;
