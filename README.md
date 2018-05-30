@@ -15,8 +15,8 @@ changes and shows in which workspace(s) on hover
 
 ## Authors & Sponsors
 
-* Martin Ficzel - ficzel@sitegeist.de
-* Max Strübing - struebing@sitegeist.de
+* [Martin Ficzel](https://github.com/mficzel) - ficzel@sitegeist.de
+* [Max Strübing](https://github.com/mstruebing/) - struebing@sitegeist.de
 
 *The development and the public-releases of this package is generously sponsored by our employer https://www.sitegeist.de.*
 
