@@ -25,9 +25,9 @@ changes and shows in which workspace(s) on hover
 The package is currently not registered at packagist so you have to install it manually:
 
 ```sh
-cd <YOUR_NEOS_PROJECT_ROOT>
-composer config repositories.Sitegeist.TrafficLights vcs https://github.com/sitegeist/Sitegeist.TrafficLights
-composer require "sitegeist/trafficlights:@dev"
+cd <YOUR_NEOS_PROJECT_ROOT> && \
+composer config repositories.Sitegeist.TrafficLights vcs https://github.com/sitegeist/Sitegeist.TrafficLights && \
+composer require "sitegeist/trafficlights:@dev" && \
 ./flow flow:package:rescan && \
 ./flow doctrine:migrate && \
 ./flow unpublishedchanges:update
