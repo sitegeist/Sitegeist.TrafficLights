@@ -122,13 +122,11 @@ class UnpublishedChangesCommandController extends CommandController
                 []
             );
 
-
             foreach ($documentPathChanges as $documentContextPath => $changeNumber) {
-
                 $pathParts = NodePaths::explodeContextPath($documentContextPath);
                 $context = $this->contextFactory->create([
                     'workspaceName' => $pathParts['workspaceName'],
-                    'dimensions ' => $pathParts['dimensions'],
+                    'dimensions' => $pathParts['dimensions'],
                     'invisibleContentShown' => TRUE,
                     'removedContentShown' => TRUE,
                     'inaccessibleContentShown' => TRUE
