@@ -15,7 +15,7 @@
     "js-yaml": "^4.1.0",
     "mem": "^8.1.1",
     "merge": "^2",
-    "react-dev-utils": "^1",
+    "react-dev-utils": "^11",
     "stylelint": "^12",
     "yargs-parser": "^20.2.7"
   },
