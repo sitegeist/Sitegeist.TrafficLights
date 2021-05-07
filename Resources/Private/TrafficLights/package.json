@@ -9,7 +9,25 @@
     "buildTargetDirectory": "../../Public/TrafficLights"
   },
   "devDependencies": {
-    "@neos-project/neos-ui-extensibility": "^1.0.12"
+    "@neos-project/neos-ui-extensibility": "^1.0.12",
+    "braces": "^3.0.2",
+    "hosted-git-info": "^3",
+    "js-yaml": "^4.1.0",
+    "mem": "^8.1.1",
+    "merge": "^2",
+    "react-dev-utils": "^1",
+    "stylelint": "^12",
+    "yargs-parser": "^20.2.7"
+  },
+  "resolutions": {
+    "braces": "^3.0.2",
+    "hosted-git-info": "^3",
+    "js-yaml": "^4.1.0",
+    "mem": "^8.1.1",
+    "merge": "^2",
+    "react-dev-utils": "^1",
+    "stylelint": "^12",
+    "yargs-parser": "^20.2.7"
   },
   "dependencies": {
     "amator": "^1.1.0",
