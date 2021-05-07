@@ -1,0 +1,198 @@
+.reset__reset___3Y_S- {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    color: #FFF;
+    margin: 0;
+    padding: 0;
+}
+
+    .reset__reset___3Y_S-,
+    .reset__reset___3Y_S-:before,
+    .reset__reset___3Y_S-:after {
+        box-sizing: border-box;
+    }
+
+    /* some browsers set a font-size or margin in their user stylesheets */
+
+    .reset__reset___3Y_S- input {
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .reset__reset___3Y_S- textarea {
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .reset__reset___3Y_S- select {
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .reset__reset___3Y_S- button {
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .reset__reset___3Y_S- ul {
+        padding: 0;
+    }
+
+    /* webkit adds some weird spacing otherwise */
+
+    .reset__reset___3Y_S- li {
+        display: block;
+    }
+
+    .reset__reset___3Y_S- input::-webkit-search-cancel-button {
+        display: none;
+    }
+
+    /* webkit adds white box around search box */
+
+    .reset__reset___3Y_S- input {
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+    }
+
+.tree__treeWrapper___2sbnQ {
+
+    padding: 5px 0;
+}
+
+    .tree__treeWrapper___2sbnQ:focus {
+        outline: 0;
+    }
+
+.node__header___IYjFN {
+    margin: 0;
+    position: relative;
+    line-height: 20px;
+}
+.node__header__chevron___16rco {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 18px;
+
+    color: #adadad;
+    line-height: 20px;
+    text-align: center;
+
+    cursor: pointer;
+}
+.node__header__chevron___16rco:hover {
+        color: #00ADEE;
+    }
+.node__header__chevron--isCollapsed___1lDfA > svg {
+    transform: translateY(3px) translateX(-2px) rotate(-90deg);
+}
+.node__header__chevron--isHiddenInIndex___3HVe5,
+.node__header__data--isHidden___2G2ph {
+    opacity: .5;
+}
+.node__header__chevron--isLoading___3gcVb {
+    color: #adadad !important;
+}
+.node__header__chevron--isLoading___3gcVb:hover {
+    color: #adadad !important;
+}
+.node__header__chevron--isLoading___3gcVb > svg {
+    margin-top: 6px;
+}
+.node__header__icon___2-blb {
+    margin: 0 .4em !important;
+}
+.node__header__icon__modified___2G7_G {
+	color: #ff8700 !important;
+}
+.node__header__data___Evwzu {
+    position: relative;
+    display: inline-block;
+    min-width: 100%;
+    padding: .1em 0;
+
+    border-left: 2px solid transparent;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+}
+.node__header__data--isHiddenInIndex___2SDHk {
+    opacity: .5;
+}
+.node__header__data--isHidden___2G2ph {
+    opacity: .5;
+    text-decoration: line-through;
+}
+.node__header__data--isDragging___GmvzY {
+    opacity: .2;
+}
+.node__header__data--isDirty___3pwwI {
+    border-left: 2px solid #ff8700;
+}
+.node__header__data--isFocused___3zHPu {
+    background: #323232;
+}
+.node__header__data--isFocused___3zHPu.node__header__data--isHiddenInIndex___2SDHk,
+    .node__header__data--isFocused___3zHPu.node__header__data--isHidden___2G2ph {
+        opacity: .8;
+    }
+.node__header__data--acceptsDrop___2yqLu {
+    background-color: #00ADEE;
+}
+.node__header__data--acceptsDrop___2yqLu *,
+.node__header__data--deniesDrop___2C_Jy * {
+    pointer-events: none;
+}
+.node__header__labelWrapper___v6nSo {
+    max-width: 260px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    line-height: 1.5;
+    vertical-align: middle;
+}
+.node__header__label___P0o2B {
+}
+.node__header__data--isActive___3_Ui0 .node__header__label___P0o2B {
+        color: #00ADEE;
+    }
+.node__contents___3c2q8 {
+}
+.node__dropTarget___13wiP {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding-left: 15px;
+}
+.node__dropTarget--before___1GlQu {
+    top: -5px;
+    z-index: 1;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.node__dropTarget--after___gC7Oc {
+    bottom: 0;
+    z-index: 2;
+    padding-top: 6px;
+    padding-bottom: 0;
+}
+.node__dropTarget__inner___aiss_ {
+    height: 2px;
+}
+.node__dropTarget__inner--acceptsDrop___13kjs {
+    background-color: #00ADEE;
+}
+
+.style__pageTree___8oOO_ {
+    overflow-y: auto;
+    /* Node Tree is expected to be rendered inside a display: flex container - and it will take up all remaining space */
+    flex: 1 0 0px;
+    transition: .5s ease height, overflow-y .5s;
+}
+
+
+/*# sourceMappingURL=Plugin.css.map*/
